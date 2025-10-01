@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h1>What's Your Name</h1>
+            <label for="username">Name: </label>
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <label for="password">Password: </label>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <label>
+                <input type="checkbox" id="showPassword" onclick="togglePassword()"> Show Password
+            </label>
+            <button onclick="document.location='valentine.html'" type="submit">Submit</button>
+        </div>
+
+    </div>
+    <script>
+        //show password functionality//
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const checkbox = document.getElementById('showPassword');
+
+            passwordInput.type = checkbox.checked ? 'text' : 'password';
+        }
+
+        //validate form submission//
+        function validateForm() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === '' || password === '') {
+                alert("Please fill in all fields.");
+            } else {
+                document.location = 'valentine.html';
+            }
+        }
+
+    </script>
+</body>
+</html>
